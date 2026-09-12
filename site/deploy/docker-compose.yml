@@ -1,0 +1,23 @@
+# kryflow.dang.pm: site học KryFlow, static, sau nginx-proxy + acme companion trên khi-box.
+# Deploy: rsync site/dist/ lên /opt/kryflow/web/ rồi `docker compose up -d` (lần đầu). Lần sau chỉ cần rsync.
+services:
+  kryflow:
+    image: nginx:alpine
+    container_name: kryflow
+    restart: unless-stopped
+    expose:
+      - "80"
+    environment:
+      VIRTUAL_HOST: kryflow.dang.pm
+      VIRTUAL_PORT: "80"
+      LETSENCRYPT_HOST: kryflow.dang.pm
+      LETSENCRYPT_EMAIL: dangphan.work@gmail.com
+    volumes:
+      - ./web:/usr/share/nginx/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true

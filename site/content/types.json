@@ -1,0 +1,63 @@
+[
+ {
+  "id": "tool",
+  "name": "Công cụ",
+  "hint": "1 việc, cho mình hoặc nhóm nhỏ",
+  "when": "Thứ nhỏ dùng một mình hoặc nhóm nhỏ: máy chia tiền, trang tra cứu, form nhắc việc. Không đăng nhập, ít hoặc không lưu dữ liệu của người khác.",
+  "chain": [
+   "brief",
+   "plan",
+   "build",
+   "test",
+   "ship",
+   "docs"
+  ],
+  "note": "Bỏ Luồng, Nền, Gu. Đi thẳng từ Mở việc sang Kế hoạch."
+ },
+ {
+  "id": "web",
+  "name": "Trang web",
+  "hint": "landing, giới thiệu, sự kiện",
+  "when": "Trang giới thiệu, landing, portfolio, trang sự kiện. Có thể có 1 form liên hệ hoặc đặt chỗ.",
+  "chain": [
+   "brief",
+   "flow",
+   "style",
+   "plan",
+   "build",
+   "test",
+   "ship",
+   "docs"
+  ],
+  "note": "Có form hoặc đặt chỗ hoặc thanh toán thì bật bước Luồng, không thì bỏ."
+ },
+ {
+  "id": "app",
+  "name": "Ứng dụng",
+  "hint": "đăng nhập, dữ liệu, trạng thái",
+  "when": "Có đăng nhập, dữ liệu của nhiều người, trạng thái đổi theo thời gian: đơn hàng, lịch hẹn, gói buổi.",
+  "chain": [
+   "brief",
+   "flow",
+   "base",
+   "style",
+   "plan",
+   "build",
+   "test",
+   "ship",
+   "docs"
+  ],
+  "note": "Đi đủ 3 cửa 1 chiều. Phần Nền được duyệt riêng từng bảng."
+ },
+ {
+  "id": "lab",
+  "name": "Thử nghiệm",
+  "hint": "xem ý có chạy không",
+  "when": "Chỉ muốn xem một ý có chạy không trong khung giờ định trước, ví dụ 2 tiếng. Không giao, không tài liệu.",
+  "chain": [
+   "brief",
+   "build"
+  ],
+  "note": "Brief 3 dòng: thử gì, bao lâu, ngày kết luận. Làm nhanh rồi ghi kết luận Làm thật hay Bỏ."
+ }
+]

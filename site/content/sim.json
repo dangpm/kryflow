@@ -1,0 +1,199 @@
+{
+ "title": "Chạy thử: tool chia tiền nhóm",
+ "lead": "Xem một tool nhỏ đi trọn đường ray, từ Mở việc tới Giao, rồi một vòng Nâng cấp vá lỗi chia lẻ 1 đồng. Bấm từng bước để dòng chat hiện dần và thấy chỗ AI dừng ở cửa.",
+ "lessonsTitle": "Ván này dạy gì",
+ "lessons": [
+  {
+   "title": "Cửa gác ép AI dừng",
+   "desc": "Ở Mở việc, AI in 4 câu gác rồi dừng, không tự trả lời câu chỉ bạn biết. Bạn gõ DUYỆT thì mới đi tiếp."
+  },
+  {
+   "title": "Phase 0 đưa trang trống lên link thật",
+   "desc": "Việc đầu tiên khi Làm không phải tính năng, mà là thông đường ra: một trang trống chạy trên link công khai."
+  },
+  {
+   "title": "Kiểm bằng tay trên link thật",
+   "desc": "Không kết luận xong bằng lời AI. Bạn tự mở link công khai bấm thử, gồm cả ca nghịch và ca chia lẻ."
+  },
+  {
+   "title": "Sửa phải nói nguyên nhân gốc trước",
+   "desc": "Bước Sửa cấm vá khi chưa nói được lỗi do đâu bằng 1 câu, rồi ghi bài học vào Gotcha để lần sau không lặp."
+  }
+ ],
+ "steps": [
+  {
+   "title": "Mở việc",
+   "sub": "bước 01 · chốt làm hay không",
+   "caption": "Bốn câu gác bắt bạn tự trả lời, AI bị cấm điền thay, nhất là câu chi phí mỗi tháng. Đây là cửa giữ bạn khỏi lao vào build thứ không ai dùng.",
+   "lines": [
+    {"k": "u", "t": "Mình muốn làm web nhỏ chia tiền cho nhóm đi chơi, nhập tổng tiền là chia đều."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · loại tool · bước 01/10 · cửa Mở việc · đang mở"},
+    {"k": "k", "t": "Trước khi làm, bạn tự trả lời 4 câu gác. Mình in ra rồi dừng, không điền thay bạn."},
+    {"k": "k", "t": "1 ai dùng · 2 đo thành công bằng số gì · 3 khi nào thì bỏ · 4 tốn bao nhiêu một tháng"},
+    {"k": "warn", "t": "⛔ Dừng ở cửa. Bốn câu này chỉ bạn biết, nhất là câu 4. Bạn trả lời rồi mình đi tiếp."},
+    {"k": "u", "t": "1 nhóm 4 đứa đi Đà Lạt. 2 hết cãi tiền. 3 đi xong thì thôi. 4 miễn phí, mình không nuôi."},
+    {"k": "k", "t": "Rõ. Là tool nhỏ nên chuỗi bước gọn: Mở việc, Kế hoạch, Làm, Kiểm, Giao, Sổ tay."},
+    {"k": "k", "t": "Bỏ Luồng, Nền, Gu vì không đăng nhập, không giữ dữ liệu người khác, chưa cần bàn màu."},
+    {"k": "bad", "t": "🔴 Mình tìm thử: đã có app chia tiền sẵn. Bạn vẫn tự làm chứ, hay dùng cái có sẵn?"},
+    {"k": "u", "t": "Vẫn tự làm, mình muốn học và giao diện gọn theo ý mình."},
+    {"k": "ok", "t": "✅ Qua cửa Mở việc. Hồ sơ dự án v0 đã tạo. Bạn lưu file này, mỗi chat mới dán vào đầu."},
+    {"k": "gold", "t": "Hồ sơ là bộ nhớ duy nhất. Chat không nhớ gì, tờ hồ sơ mới nhớ."}
+   ]
+  },
+  {
+   "title": "Kế hoạch",
+   "sub": "bước 05 · nhìn hiện trạng, chia phase",
+   "caption": "Kế hoạch nhìn hiện trạng thật trước khi viết. Dự án còn trống nên bắt đầu bằng phase 0: đưa một trang trống lên link công khai. Kế hoạch còn NHÁP tới khi bạn duyệt.",
+   "lines": [
+    {"k": "u", "t": "[dán hồ sơ] Lên kế hoạch làm giúp mình."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 05/10 · cửa Kế hoạch · đang nháp"},
+    {"k": "k", "t": "Hiện trạng bạn dán: dự án trống, chưa có link, chưa có màn nào. Mình chỉ lên kế hoạch từ đó."},
+    {"k": "k", "t": "Phase 0 bắt buộc: đưa một trang trống lên link công khai bằng nút Publish, để chắc đường ra chạy."},
+    {"k": "k", "t": "Phase 1 nhập liệu: ô tổng tiền, danh sách người, ai đã trả. Phase 2: chia đều, in ai đưa ai."},
+    {"k": "k", "t": "Mỗi phase có prompt dán sẵn, 1 câu kiểm, và cách quay lại bản trước nếu hỏng."},
+    {"k": "bad", "t": "🔴 Cảnh báo sớm: chia lẻ dễ lệch vài đồng do làm tròn. Để riêng 1 câu kiểm cho việc đó ở Kiểm."},
+    {"k": "warn", "t": "⛔ Kế hoạch đang NHÁP. Đọc xong bạn gõ DUYỆT thì mới sang bước Làm, mình không tự nhảy."},
+    {"k": "u", "t": "DUYỆT."},
+    {"k": "ok", "t": "✅ Kế hoạch chốt, ghi vào hồ sơ phần 05. Sang bước Làm, đi từng phase một."}
+   ]
+  },
+  {
+   "title": "Làm",
+   "sub": "bước 06 · thi công từng phase",
+   "caption": "Làm bám đúng kế hoạch, một phase một lần rồi dừng chờ bạn kiểm. Bạn tick ĐẠT chứ AI không tự tick. Lệch kế hoạch thì dừng hỏi, không tự đổi.",
+   "lines": [
+    {"k": "u", "t": "Làm phase 0 trước đi."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 06/10 · cửa Làm · phase 0"},
+    {"k": "k", "t": "Prompt dán vào nền build: 'Tạo trang trống tiêu đề Chia Tiền Nhóm, nền sáng, một dòng chữ giữa trang'."},
+    {"k": "k", "t": "Bấm Publish, nền build cho bạn một link công khai. Dán link đó lại đây."},
+    {"k": "u", "t": "Xong, link đây: chiatien.example.app. Mở thấy trang trống có tiêu đề."},
+    {"k": "ok", "t": "✅ Phase 0 ĐẠT, đường ra đã thông. Mình chưa tự tick, bạn vừa tự xác nhận link chạy."},
+    {"k": "k", "t": "Phase 1 nhập liệu. Prompt: 'Thêm ô tổng tiền, danh sách tên người, tick ai đã trả tiền'."},
+    {"k": "u", "t": "Nền build báo đã thêm ô tổng tiền, khung thêm tên, và ô tick người trả."},
+    {"k": "k", "t": "Khớp kế hoạch, ghi ĐẠT phase 1. Bạn tự bấm thử thêm 4 tên xem chạy không rồi báo mình."},
+    {"k": "warn", "t": "⛔ Một phase sửa tối đa 3 lần. Quá 3 lần chưa chạy thì dừng, hỏi câu lớn hơn, không vá tiếp."},
+    {"k": "u", "t": "Thêm tên ok. Làm nốt phase 2 chia tiền."},
+    {"k": "gold", "t": "Làm thì bám kế hoạch, không nghĩ lại. Muốn thêm gì ngoài kế hoạch thì dừng, quay lại Kế hoạch."}
+   ]
+  },
+  {
+   "title": "Kiểm",
+   "sub": "bước 07 · kiểm trên link thật",
+   "caption": "Kiểm phải mở link công khai bấm bằng tay, không kết luận bằng lời AI hay bằng đọc mã. Lần này bạn thử số chia chẵn nên bản đầu qua sạch, ca lẻ chưa lộ.",
+   "lines": [
+    {"k": "u", "t": "Chia tiền chạy rồi. Kiểm giúp mình."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 07/10 · cửa Kiểm · đang kiểm"},
+    {"k": "k", "t": "Mình biến từng quy tắc thành bước bấm. Bạn mở link công khai bấm thật, mình không tự cho ĐẠT."},
+    {"k": "k", "t": "AC-01: nhập 400k, 4 người, 1 người trả. Kỳ vọng mỗi người còn lại đưa 100k."},
+    {"k": "u", "t": "Mở link bấm thử: ra đúng, mỗi người 100.000. ĐẠT."},
+    {"k": "k", "t": "AC-02 nghịch: bỏ trống tổng tiền rồi bấm chia. Kỳ vọng báo thiếu, không ra số lạ."},
+    {"k": "u", "t": "Bỏ trống thì báo 'nhập tổng tiền'. ĐẠT. Chụp ảnh màn hình luôn."},
+    {"k": "k", "t": "Chuẩn xong của tool: chạy trên link thật, có ca nghịch, không lộ khoá bí mật. Đủ cả."},
+    {"k": "ok", "t": "✅ Mọi AC ĐẠT trên link thật. Kết luận ĐƯỢC GIAO."},
+    {"k": "gold", "t": "Kiểm phải bấm tay trên link công khai, không kết luận bằng đọc mã hay bằng lời mình nói."}
+   ]
+  },
+  {
+   "title": "Giao",
+   "sub": "bước 08 · 3 cổng rồi chốt sổ",
+   "caption": "Giao đi qua 3 cổng trước, làm, sau: sao lưu, bấm Publish, mở link ẩn danh đi một lượt. Xong thì chốt phiên bản và ghi 1 dòng changelog.",
+   "lines": [
+    {"k": "u", "t": "ĐƯỢC GIAO rồi, cho lên thật đi."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 08/10 · cửa Giao · 3 cổng"},
+    {"k": "k", "t": "Cổng TRƯỚC: bạn xuất hoặc sao lưu bản hiện tại, kiểm không có khoá bí mật lộ trong trang."},
+    {"k": "k", "t": "Cổng LÀM: bấm Publish của nền build. Mình không tự bấm thay bạn."},
+    {"k": "u", "t": "Đã sao lưu, đã Publish. Link công khai vẫn là chiatien.example.app."},
+    {"k": "k", "t": "Cổng SAU: mở link đó ở cửa sổ ẩn danh và trên điện thoại, đi một lượt chia thử, chụp ảnh."},
+    {"k": "u", "t": "Ẩn danh mở ok, điện thoại chia cũng ra đúng."},
+    {"k": "k", "t": "Chốt sổ: phiên bản v1.0.0. Changelog: '12/09 · v1.0.0 · ra bản chia đều đầu tiên · vì nhóm hay cãi tiền'."},
+    {"k": "ok", "t": "✅ LIVE. Link chiatien.example.app, v1.0.0. Chưa có Sổ tay nên cửa kế là bước 09."},
+    {"k": "gold", "t": "Mỗi lần Giao ghi 1 dòng changelog: ngày, phiên bản, làm gì, vì sao. Sau này đọc lại là hiểu."}
+   ]
+  },
+  {
+   "title": "Sổ tay",
+   "sub": "bước 09 · viết bản đồ đã build",
+   "caption": "Sổ tay ghi cái đã build thật, không phải cái muốn build. Ba file README, FEATURES, RUNBOOK để lần sau sửa mà không phải kể lại từ đầu.",
+   "lines": [
+    {"k": "u", "t": "[dán hồ sơ] Viết sổ tay cho tool này."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 09/10 · cửa Sổ tay · đang viết"},
+    {"k": "k", "t": "Mình chỉ ghi cái đang chạy thật trên link, không chép lại ý muốn từ kế hoạch."},
+    {"k": "k", "t": "README: tool chia đều tiền nhóm, cách bấm Publish lại, cấu trúc một màn nhập và kết quả."},
+    {"k": "k", "t": "FEATURES: F01 nhập tổng, F02 chọn người trả, F03 chia đều. Dòng đầu ghi 'viết ở phiên bản v1.0.0'."},
+    {"k": "k", "t": "RUNBOOK: cách publish lại, cách quay về bản trước trong 5 phút, chỗ ghi gotcha khi có lỗi."},
+    {"k": "k", "t": "Bạn bấm thử từng tính năng trên link thật, xác nhận màn có thật rồi mình mới ghi vào sổ."},
+    {"k": "u", "t": "Bấm đủ 3 tính năng, đều có thật. Không thấy khoá bí mật nào trong trang."},
+    {"k": "ok", "t": "✅ Sổ tay xong, 3 file. Từ giờ mọi thay đổi đi bằng cửa Nâng cấp, không sửa thẳng nữa."},
+    {"k": "gold", "t": "Sổ tay không tăng phiên bản. Nó là bản đồ để bước Nâng cấp biết đang đứng ở đâu."}
+   ]
+  },
+  {
+   "title": "Nâng cấp",
+   "sub": "bước 10 · phân cửa, chỉ đúng bước",
+   "caption": "Bug chia lẻ lộ ra khi dùng thật. Nâng cấp là cửa duy nhất sửa app đã sống: đọc sổ tay trước, khoanh vùng đụng, phân loại cửa rồi chỉ sang đúng bước.",
+   "lines": [
+    {"k": "u", "t": "Bạn mình chia 100k cho 3 người, cộng lại chỉ 99.999. Thiếu 1 đồng. Sửa sao?"},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 10/10 · cửa Nâng cấp · phân cửa"},
+    {"k": "k", "t": "App đã sống nên vào bằng đây, không sửa thẳng. Mình đọc sổ tay trước khi đụng gì."},
+    {"k": "k", "t": "Đọc FEATURES: vùng đụng là F03 chia đều, ở màn kết quả. Đây là sửa lỗi, không phải tính năng mới."},
+    {"k": "k", "t": "Loại cửa: không đụng bảng dữ liệu, đăng nhập hay thanh toán. Là cửa 2 chiều, khỏi phản biện."},
+    {"k": "k", "t": "Vì là sửa lỗi, mình chỉ bạn mở chat mới chạy bước Sửa, mang theo vùng đụng F03 đã khoanh."},
+    {"k": "warn", "t": "⛔ Chưa vá gì ở đây. Nâng cấp chỉ phân cửa và chỉ đường, việc tìm nguyên nhân để cho bước Sửa."},
+    {"k": "u", "t": "Ok, mình mở chat Sửa."},
+    {"k": "gold", "t": "App sống rồi thì mọi thay đổi vào một cửa Nâng cấp. Nó đọc bản đồ trước, không kể lại từ đầu."}
+   ]
+  },
+  {
+   "title": "Sửa",
+   "sub": "bước S · nguyên nhân gốc rồi mới vá",
+   "caption": "Sửa cấm vá khi chưa nói được nguyên nhân gốc bằng 1 câu. Vá xong phải dựng lại đúng ca lỗi để kiểm, và ghi bài học vào Gotcha để lần sau không lặp.",
+   "lines": [
+    {"k": "u", "t": "[dán vùng đụng F03] Lỗi chia 100k cho 3 ra tổng 99.999."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · cửa Sửa · tìm nguyên nhân"},
+    {"k": "k", "t": "Chưa vá vội. Mình đưa giả thuyết, bạn tự kiểm rồi mình chốt nguyên nhân bằng 1 câu."},
+    {"k": "k", "t": "Giả thuyết: mỗi phần bị làm tròn xuống 33.333, ba phần cộng lại hụt 1 đồng so với 100.000."},
+    {"k": "u", "t": "Đúng rồi, nó cắt số lẻ ở từng người."},
+    {"k": "bad", "t": "🔴 Nguyên nhân gốc: lỗi vì làm tròn từng phần ở F03, lọt vì lúc Kiểm chỉ thử số chia chẵn."},
+    {"k": "k", "t": "Cách vá: dồn phần lẻ cho 1 người, ví dụ 2 người 33.333 và 1 người 33.334. Quay lại bằng bản sao lưu."},
+    {"k": "k", "t": "Dựng lại đúng ca: chia 100k cho 3, kỳ vọng tổng đúng 100.000. Bạn bấm thử trên bản vừa sửa."},
+    {"k": "u", "t": "Bấm lại: 33.333 + 33.333 + 33.334 = 100.000. ĐẠT."},
+    {"k": "ok", "t": "✅ Vá xong, ca tái hiện đã ĐẠT. Ghi Gotcha: 'chia lẻ dồn đồng cuối cho một người'."},
+    {"k": "gold", "t": "Thêm 1 dòng Checklist trước Giao: luôn thử một ca chia lẻ. Lần sau lỗi này không lọt nữa."}
+   ]
+  },
+  {
+   "title": "Kiểm lại",
+   "sub": "bước 07 · kiểm lại sau vá",
+   "caption": "Sau khi vá, kiểm lại trên link thật: ca lỗi cũ phải ĐẠT và các ca cũ vẫn phải chạy, tránh vá chỗ này hỏng chỗ kia.",
+   "lines": [
+    {"k": "u", "t": "Vá xong, kiểm lại giúp mình trước khi giao."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 07/10 · cửa Kiểm · kiểm lại"},
+    {"k": "k", "t": "Kiểm ca lỗi cũ AC-03: chia 100k cho 3. Bạn mở link bấm thật, mình không tự cho ĐẠT."},
+    {"k": "u", "t": "Tổng ra đúng 100.000, phần lẻ dồn cho người cuối. ĐẠT."},
+    {"k": "k", "t": "Kiểm lại ca cũ AC-01: 400k chia 4, để chắc vá không làm hỏng ca chia chẵn."},
+    {"k": "u", "t": "Vẫn ra mỗi người 100.000. ĐẠT."},
+    {"k": "k", "t": "Chạy nốt dòng Checklist trước Giao mới thêm: thử một ca lẻ 50k chia 3."},
+    {"k": "u", "t": "50k chia 3 ra 16.666 + 16.667 + 16.667 = 50.000. ĐẠT."},
+    {"k": "ok", "t": "✅ Mọi AC ĐẠT trên link thật, gồm cả ca lẻ. Kết luận ĐƯỢC GIAO."},
+    {"k": "gold", "t": "Sửa xong luôn kiểm lại cả ca cũ, không chỉ ca vừa vá. Vá mù dễ đổ chỗ khác."}
+   ]
+  },
+  {
+   "title": "Giao lại",
+   "sub": "bước 08 · giao lại, phiên bản +0.0.1",
+   "caption": "Giao lại đi đúng 3 cổng như lần đầu. Sửa lỗi nên phiên bản tăng bậc nhỏ nhất, và ghi thêm 1 dòng changelog cho lần vá này rồi cập nhật sổ tay delta.",
+   "lines": [
+    {"k": "u", "t": "ĐƯỢC GIAO rồi, cho bản vá lên thật."},
+    {"k": "a", "t": "▶ [KryFlow] Chia Tiền Nhóm · tool · bước 08/10 · cửa Giao · 3 cổng"},
+    {"k": "k", "t": "Cổng TRƯỚC: sao lưu bản đang chạy trước khi đè, kiểm không lộ khoá bí mật."},
+    {"k": "k", "t": "Cổng LÀM: bấm Publish bản vá. Cổng SAU: mở ẩn danh chia thử một ca lẻ, chụp ảnh."},
+    {"k": "u", "t": "Sao lưu, Publish, mở ẩn danh chia 100k cho 3 ra đúng 100.000."},
+    {"k": "k", "t": "Sửa lỗi nên tăng bậc nhỏ nhất: v1.0.0 lên v1.0.1, không phải v1.1.0."},
+    {"k": "k", "t": "Changelog: '12/09 · v1.0.1 · vá chia lẻ dồn 1 đồng cho người cuối · vì cộng lại thiếu 1 đồng'."},
+    {"k": "k", "t": "Cập nhật sổ tay delta: F03 ghi chú cách dồn lẻ, đổi dòng phiên bản sổ tay sang v1.0.1."},
+    {"k": "ok", "t": "✅ LIVE v1.0.1. Vòng Nâng cấp khép lại: Nâng cấp, Sửa, Kiểm, Giao, cập nhật sổ tay."},
+    {"k": "gold", "t": "Sửa lỗi tăng số cuối, thêm tính năng tăng số giữa. Số phiên bản kể chuyện app đã đi qua gì."}
+   ]
+  }
+ ]
+}
