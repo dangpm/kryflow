@@ -7,24 +7,24 @@
  "parentRepo": "https://github.com/dangpm/kry-lifecycle",
  "eyebrow": "KryFlow · cho người mới dùng ChatGPT Plus, Gemini",
  "h1": "Mỗi bước một việc, mỗi việc một cửa gác",
- "leadIndex": "Bạn là đạo diễn, AI là thợ giỏi nhưng hay quên và hay làm tắt. KryFlow là đường ray 10 bước cộng 1 lối cứu lỗi: mỗi bước làm đúng một việc, kết bằng một cửa, AI phải in cửa và dừng chờ bạn. Không mất ngữ cảnh giữa các chat, không bị AI bỏ bước.",
+ "leadIndex": "AI dựng app rất nhanh, nhưng hay làm ẩu và hay quên. KryFlow chia việc thành các bước rõ ràng để bạn cầm trịch. Mỗi bước làm một việc, xong mới qua bước sau. Không cần biết code.",
  "coreCount": 6,
  "laws": [
   {
-   "title": "Một bước, một việc, một cửa",
-   "desc": "Mỗi bước làm đúng một việc rồi dừng ở cửa của nó. AI phải in cửa và chờ bạn gõ DUYỆT, không gộp nhiều việc, không tự nhảy bước."
+   "title": "Một bước, một việc",
+   "desc": "Mỗi bước làm đúng một việc rồi dừng, chờ bạn gật mới đi tiếp. AI không được nhảy cóc hay làm gộp."
   },
   {
-   "title": "Cửa 1 chiều làm kỹ, cửa 2 chiều lặp nhanh",
-   "desc": "Luồng, Nền, Gu sai là sửa rất đắt nên đi chậm và bắt buộc mở chat 2 cho kẻ phản biện. Kế hoạch, Làm, Kiểm sai thì làm lại, cứ lặp nhanh."
+   "title": "Chỗ đắt thì làm chậm",
+   "desc": "Dữ liệu và luồng sai là sửa rất tốn. Ba bước này đi chậm và nhờ một chat khác soi lại. Phần dễ sửa thì làm nhanh."
   },
   {
-   "title": "Nhìn thật trước khi làm, làm rồi không nghĩ lại",
-   "desc": "Kế hoạch phải nhìn hiện trạng thật (link, ảnh, danh sách màn) trước khi viết. Lúc Làm bám kế hoạch, lệch thì dừng hỏi, không tự đổi giữa chừng."
+   "title": "Nhìn thật rồi mới làm",
+   "desc": "Lên kế hoạch dựa trên cái đang có thật, không đoán. Lúc làm thì bám kế hoạch, lệch thì dừng hỏi."
   }
  ],
  "mapTitle": "10 bước, 3 vùng, 1 vòng lặp sau khi sống",
- "mapLead": "Bấm một bước để xem việc của nó, cửa vào, cửa ra và sản phẩm để lại. Chọn loại dự án để xem bước nào được bỏ. Sửa là lối phụ, vào bất cứ khi nào có lỗi.",
+ "mapLead": "Bấm một bước để xem nó làm gì và một ví dụ. Chọn loại dự án để biết bước nào được bỏ qua.",
  "loopNote": "Đã sống: Nâng cấp → (tính năng) Kế hoạch·Làm·Kiểm | (lỗi) Sửa·Kiểm → cập nhật Sổ tay → Giao lại ↺",
  "lanes": [
   {
@@ -63,18 +63,18 @@
  "whyTitle": "Vì sao người mới cần một đường ray",
  "why": [
   {
-   "title": "Chat không có trí nhớ",
-   "desc": "Mở chat mới là AI quên sạch dự án. KryFlow gói bộ nhớ vào 1 tờ hồ sơ bạn dán lại mỗi lần, nên không phải kể lại từ đầu và AI không bịa lại quyết định cũ."
+   "title": "Chat hay quên",
+   "desc": "Mở chat mới là AI quên sạch. KryFlow gói mọi thứ vào một tờ ghi chú, bạn dán lại mỗi lần, khỏi kể lại từ đầu."
   },
   {
-   "title": "AI hay làm tắt",
-   "desc": "Hỏi một câu, AI dựng luôn cả app và bỏ mọi bước ở giữa. Cửa gác ép AI dừng đúng chỗ để bạn kịp quyết cái đắt tiền: dữ liệu, luồng, diện mạo."
+   "title": "AI hay làm ẩu",
+   "desc": "Hỏi một câu, AI dựng luôn cả app và bỏ qua các bước quan trọng. Cửa gác bắt nó dừng đúng chỗ để bạn kịp quyết."
   },
   {
-   "title": "Sai nền tảng thì sửa rất đắt",
-   "desc": "Đổi một cột dữ liệu khi đã có người dùng tốn gấp trăm lần sửa một nút. KryFlow đặt kẻ phản biện đứng ngay ở 3 cửa đắt nhất, trước khi bạn build."
+   "title": "Sai nền rất tốn",
+   "desc": "Đổi cách lưu dữ liệu khi đã có khách tốn gấp trăm lần. KryFlow chặn lỗi đó ngay từ đầu, trước khi bạn dựng."
   }
  ],
  "ctaTitle": "Dự án đầu tiên của bạn chỉ cần 6 bước",
- "ctaDesc": "Một công cụ nhỏ đi qua Mở việc, Kế hoạch, Làm, Kiểm, Giao, Sổ tay là xong. App có đăng nhập mới cần đủ đường ray. Cài một lần rồi bắt đầu."
+ "ctaDesc": "Một công cụ nhỏ chỉ cần 6 bước. App có đăng nhập mới cần đủ. Tải cả bộ trên GitHub rồi làm theo."
 }

@@ -87,20 +87,17 @@
       if (!detail) return;
       var s = byId[slug];
       if (!s) { detail.innerHTML = '<div><p class="empty">Bấm một bước trên bản đồ để xem việc của nó, cửa vào, cửa ra và sản phẩm để lại.</p></div><div></div>'; return; }
-      var doorLabel = { one: 'Cửa 1 chiều · làm kỹ, có phản biện', two: 'Cửa 2 chiều · lặp nhanh', live: 'Sau khi sống', fix: 'Bất kỳ lúc lỗi' }[s.door] || '';
+      var doorLabel = { one: 'Cửa 1 chiều, làm kỹ, có người phản biện', two: 'Cửa 2 chiều, lặp nhanh', live: 'Dùng sau khi ra mắt', fix: 'Lối phụ, vào khi có lỗi' }[s.door] || '';
       detail.innerHTML =
         '<div>' +
           '<div class="title"><span class="chip ' + s.door + '">' + s.order + '</span><h3>' + esc(s.name) + ' <span class="faint mono" style="font-size:13px;font-weight:400">' + esc(s.en) + '</span></h3></div>' +
-          '<p>' + esc(s.job) + '</p>' +
-          '<dl class="kv"><dt>Loại cửa</dt><dd>' + esc(doorLabel) + '</dd>' +
-          '<dt>Phản biện</dt><dd>' + esc(s.challenger || 'Không cần') + '</dd>' +
-          '<dt>Để lại</dt><dd>' + esc(s.output) + '</dd></dl>' +
-          '<div class="btn-row" style="margin-top:16px"><a class="btn primary sm" href="/buoc/' + s.slug + '/">Mở bước này</a></div>' +
+          '<p>' + esc(s.viec || s.job) + '</p>' +
+          '<div class="btn-row" style="margin-top:16px"><a class="btn primary sm" href="/buoc/' + s.slug + '/">Xem bước này</a></div>' +
         '</div>' +
         '<div>' +
-          '<dl class="kv" style="margin-top:0"><dt>Vào khi</dt><dd>' + esc(s.gateIn) + '</dd>' +
-          '<dt>Xong khi</dt><dd>' + esc(s.gateOut) + '</dd>' +
-          '<dt>Chưa sang bước kế nếu</dt><dd>' + esc(s.stop) + '</dd></dl>' +
+          '<dl class="kv" style="margin-top:0"><dt>Ai cần</dt><dd>' + esc(s.aiCan || '') + '</dd>' +
+          '<dt>Xong khi</dt><dd>' + esc(s.xong || s.gateOut) + '</dd>' +
+          '<dt>Loại cửa</dt><dd>' + esc(doorLabel) + '</dd></dl>' +
         '</div>';
     }
     nodes.forEach(function (n) {

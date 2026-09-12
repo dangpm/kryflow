@@ -5,6 +5,12 @@ lead: Lịch sử phiên bản của KryFlow.
 
 # CHANGELOG
 
+## [1.0.1] · 2026-09-12
+
+- Rút gọn mạnh phần đọc trên site cho người mới: trang mỗi bước giờ chỉ còn giải thích 3 dòng, một ví dụ hội thoại ngắn, và nút lấy prompt trên GitHub. Bỏ khối prompt dài 1.500 từ khỏi trang.
+- Site chỉ để hiểu cách vận hành bằng ví dụ; prompt và hướng dẫn chi tiết tải từ repo về.
+- Viết lại ngôn ngữ trang chủ, trang Bắt đầu và các câu mô tả cho ngắn và đời thường hơn.
+
 ## [1.0.0] · 2026-09-11
 
 - Ra đời từ Kry Lifecycle v2.0.0, rút gọn cho người mới dùng ChatGPT Plus hoặc Gemini, không cần biết code.

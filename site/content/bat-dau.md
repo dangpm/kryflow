@@ -1,86 +1,43 @@
 ---
 title: Bắt đầu trong 10 phút
-lead: Cài một lần, tạo tờ hồ sơ dự án, chạy bước đầu tiên, rồi lặp cùng một nhịp mỗi ngày.
+lead: Cài một lần, rồi mỗi ngày chỉ mở chat và làm theo bước.
 ---
 
 ## Bạn cần gì
 
-Ba thứ, không cần cài phần mềm lạ:
+- Một gói trả phí: **ChatGPT Plus** hoặc **Google AI Pro** (tức Gemini). Chỉ cần một.
+- Một chỗ lưu ghi chú dự án: một file trên máy, hoặc một Google Docs.
+- Khoảng 10 phút cho lần đầu.
 
-- Một gói trả phí: **ChatGPT Plus** (bản trả phí của ChatGPT) HOẶC **Google AI Pro** (bản trả phí của Gemini). Chỉ cần một trong hai.
-- Một chỗ lưu duy nhất cho tờ hồ sơ dự án: một thư mục trên máy, hoặc một **Google Docs** (tài liệu online của Google). Đây là bộ nhớ của dự án, bạn giữ nó suốt.
-- Khoảng 30 phút cho lần đầu. Từ lần sau chỉ còn vài phút mở đầu mỗi chat.
+## Ba bước cài
 
-## Cài 1 lần
+1. **Tải bộ KryFlow** trên [GitHub](https://github.com/dangpm/kryflow) về máy. Trong đó có sẵn các prompt và file mẫu.
+2. **Dạy AI luật chơi một lần.** Mở file `system/kryflow-guide.md`, chép nội dung vào phần hướng dẫn của một khu làm việc riêng: **Project** nếu bạn dùng ChatGPT, **Gem** nếu bạn dùng Gemini. Không tìm thấy nút đó cũng không sao, chép vào đầu mỗi chat vẫn chạy.
+3. **Tạo tờ ghi chú dự án.** Copy file `templates/project.md` thành file của bạn. Đây là trí nhớ của dự án. Bạn dán nó vào đầu mỗi chat mới, vì chat mới thì AI quên hết.
 
-Bạn dán một **system prompt** (bản luật chung, dán một lần để AI luôn nhớ cách làm việc) và đính kèm vài file mẫu tĩnh. Chọn đúng nhánh theo gói bạn có.
+## Rồi làm theo bước
 
-### Nếu bạn dùng ChatGPT
+Bắt đầu ở [bước 1: Mở việc](/buoc/brief/). Mỗi bước bạn mở một chat mới, dán tờ ghi chú, chép prompt của bước vào, rồi làm theo.
 
-1. Mở ChatGPT, tạo một **Project** (khu làm việc riêng cho một dự án) tên là KryFlow.
-2. Vào phần **Instructions** (ô hướng dẫn của Project), dán toàn bộ system prompt vào đó.
-3. Đính kèm các file tĩnh: mẫu hồ sơ, bộ prompt các bước, bộ phản biện. Đây là thứ ít đổi nên đính một lần.
-4. Mỗi bước sau này bạn mở một chat mới bên trong Project này.
+Mỗi lần AI xong một bước, nó dừng lại chờ bạn gật. Bạn kiểm thấy ổn thì gõ **DUYỆT**, rồi qua bước sau. Chưa ổn thì gõ **SỬA** và nói rõ chỗ cần sửa.
 
-### Nếu bạn dùng Gemini
+## Nhịp mỗi ngày
 
-1. Mở Gemini, tạo một **Gem** (trợ lý riêng bạn tự đặt luật) tên là KryFlow.
-2. Dán toàn bộ system prompt vào phần hướng dẫn của Gem.
-3. Tải các file tĩnh vào phần **Knowledge** (kho tài liệu của Gem) nếu có ô này.
-4. Giữ tờ hồ sơ trong một Google Docs, mỗi chat bạn copy nội dung dán vào.
-
-> Không thấy nút tạo Project hay Gem? Không sao. Bạn chỉ cần dán 8 dòng luật đầu ở đầu mỗi chat mới là chạy được như nhau. Project và Gem chỉ để đỡ phải dán lại phần luật chung.
-
-## Tạo hồ sơ dự án
-
-**Hồ sơ dự án** là một file text bạn giữ, là bộ nhớ duy nhất của dự án và bạn dán nó vào đầu mọi chat mới.
-
-1. Mở mẫu hồ sơ, lưu thành file của riêng bạn, ví dụ `{{tên dự án}}.md`.
-2. Điền khối đầu: tên, loại dự án, bước đang ở, nền tảng build, ngày. Chỗ nào chưa biết cứ để trống, bước 1 sẽ điền giúp.
-3. Giữ file này dưới 2 trang. Đừng chép cả đoạn chat vào, chỉ giữ phần kết luận.
-
-Xem cấu trúc đầy đủ và cách nén ở trang [Hồ sơ dự án](/ho-so/).
-
-## Chạy bước 1
-
-Bước đầu tiên là **Mở việc**: quyết làm hay không, rồi để lại tờ hồ sơ v0.
-
-1. Mở trang [bước Mở việc](/buoc/brief/), bấm nút Chép để lấy prompt của bước.
-2. Mở một chat mới, dán theo thứ tự: prompt bước, rồi toàn bộ hồ sơ, rồi ý tưởng của bạn.
-3. AI sẽ in ra 4 câu gác rồi dừng lại chờ bạn: ai dùng, đo bằng số gì, khi nào thì bỏ, tốn bao nhiêu mỗi tháng.
-4. Tự tay trả lời cả 4 câu, nhất là câu chi phí mỗi tháng. AI bị cấm trả lời thay bạn ở đây, vì đây là việc chỉ bạn biết.
-
-Trả lời xong, AI in phần Brief và khối hồ sơ v0. Bạn dán khối đó về file, tự gõ dòng DUYỆT, rồi qua bước kế.
-
-## Nhịp làm việc mỗi ngày
-
-Mỗi bước là một chat mới, luôn cùng một nhịp:
-
-1. Mở một chat mới cho đúng bước bạn định làm.
-2. Dán tờ hồ sơ dự án vào đầu chat, kèm prompt của bước đó.
-3. Nói rõ bạn đang ở bước nào để AI đối chiếu với hồ sơ trước khi làm.
-4. Làm việc trong bước, tới khi AI in dòng cửa và dừng lại.
-5. Chép khối `[Cập nhật hồ sơ]` ở cuối trả lời về file hồ sơ, rồi tự gõ DUYỆT nếu bạn đồng ý qua cửa.
-6. Đóng chat. Lần sau mở chat mới cho bước tiếp theo, lặp lại từ đầu.
-
-Câu mở một chat mới, sửa hai chỗ điền rồi dán:
+Mở chat mới, dán tờ ghi chú, nói bạn đang ở bước nào:
 
 ```prompt
-Đây là hồ sơ dự án của tôi, đọc kỹ trước khi làm:
+Đây là ghi chú dự án của tôi:
+{{dán toàn bộ tờ ghi chú vào đây}}
 
-{{dán toàn bộ nội dung file hồ sơ vào đây}}
-
-Tôi đang ở bước {{tên bước, ví dụ Kế hoạch}}.
-Hãy đối chiếu bước này với bước ghi trong hồ sơ.
-Nếu khớp thì bắt đầu, nếu lệch thì in ⛔ và hỏi tôi trước.
+Tôi đang ở bước {{tên bước}}. Tiếp giúp tôi.
 ```
 
-## 5 điều đừng làm
+Cuối chat, AI đưa một khối cập nhật. Bạn chép nó về tờ ghi chú. Vậy là không mất gì khi qua chat mới.
 
-- Đừng để câu chi phí mỗi tháng trống, và đừng để AI điền hộ 4 câu gác.
-- Đừng bàn màu sắc hay công nghệ ngay ở bước 1, để dành cho các bước sau.
-- Đừng đính cố định tờ hồ sơ vào Project hay Gem. Hồ sơ luôn đổi, phải dán bản mới vào chat, nếu không AI sẽ tin bản cũ đã tải lên.
-- Đừng mở quá 2 dự án đang dở cùng lúc. Đóng bớt trước khi mở cái mới.
-- Đừng bỏ một cửa vì nóng ruột. Muốn bỏ thì gõ nguyên câu "tôi chấp nhận bỏ gate {{tên cửa}}" để nó là quyết định có ý thức, ghi vào nhật ký.
+## Năm điều đừng làm
 
-Cần tra nhanh prompt hay chữ khoá của từng bước, mở trang [Tra nhanh](/tra-nhanh/).
+- Đừng để AI làm nhiều bước một lúc. Một chat, một bước.
+- Đừng bỏ tờ ghi chú. Không có nó, chat mới là AI quên sạch.
+- Đừng để AI tự nói "xong". Bạn tự mở link bấm thử mới tính.
+- Đừng bàn màu hay công nghệ ở mấy bước đầu. Chưa tới lúc.
+- Đừng vội. Ba bước đầu chậm là cố ý, để khỏi sửa lại tốn công sau.

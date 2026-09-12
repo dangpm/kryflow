@@ -186,48 +186,59 @@ function pageIndex() {
 function pageStepsIndex() {
   const body = `
 <section class="step-hero" style="grid-template-columns:1fr">
-  <div><div class="crumbs"><a href="/">KryFlow</a> / các bước</div><h1>Các bước của KryFlow</h1><p class="job">Mỗi bước là một việc, có cửa vào, cửa ra và một prompt để dán. Thứ tự dưới là thứ tự đầy đủ cho một app có dữ liệu; dự án đơn giản hơn bỏ bớt bước theo bảng ở <a href="/#ban-do" style="color:var(--gold)">bản đồ</a>.</p></div>
+  <div><div class="crumbs"><a href="/">KryFlow</a> / các bước</div><h1>Các bước của KryFlow</h1><p class="job">Mười bước cộng một lối cứu lỗi. Bấm một bước để xem nó làm gì và một ví dụ. Dự án đơn giản bỏ bớt bước, xem <a href="/#ban-do" style="color:var(--gold)">bản đồ</a>.</p></div>
 </section>
 <div class="tablewrap reveal"><table class="table">
-<thead><tr><th>Bước</th><th>Tên</th><th>Việc</th><th>Cửa</th><th>Để lại</th><th>Bỏ được khi</th></tr></thead>
-<tbody>${steps.map((s) => `<tr><td class="mono">${esc(s.order)}</td><td><a href="/buoc/${s.slug}/"><b>${esc(s.name)}</b></a> <span class="faint mono" style="font-size:12px">${esc(s.en)}</span></td><td>${esc(s.job)}</td><td><span class="chip ${s.door}">${doorChip(s.door)}</span></td><td class="muted">${esc(s.output)}</td><td class="muted">${esc(s.optionalFor || 'không bỏ')}</td></tr>`).join('')}</tbody>
+<thead><tr><th>Bước</th><th>Tên</th><th>Làm gì</th><th>Cửa</th><th>Bỏ được khi</th></tr></thead>
+<tbody>${steps.map((s) => `<tr><td class="mono">${esc(s.order)}</td><td><a href="/buoc/${s.slug}/"><b>${esc(s.name)}</b></a></td><td>${esc(s.short)}</td><td><span class="chip ${s.door}">${doorChip(s.door)}</span></td><td class="muted">${esc(s.optionalFor || '')}</td></tr>`).join('')}</tbody>
 </table></div>`;
-  return layout({ title: 'Các bước', desc: 'Danh sách các bước KryFlow: việc, cửa vào, cửa ra, sản phẩm để lại.', path: '/buoc/', body, wide: true });
+  return layout({ title: 'Các bước', desc: 'Mười bước của KryFlow, mỗi bước làm một việc, kèm ví dụ.', path: '/buoc/', body, wide: true });
 }
 
 function pageStep(s, i) {
   const prev = steps[i - 1], next = steps[i + 1];
-  const pf = parsePromptFile(s.file);
-  let html = md(pf.body);
-  pf.prompts.forEach((p, k) => { html = html.replace(`<p>@@PROMPT${k}@@</p>`, promptBlock(p, k, k === 0 ? 'Prompt của bước này' : 'Prompt phụ')); });
-  // TOC từ h2
-  const toc = [...html.matchAll(/<h2 id="([^"]+)">(.*?)<\/h2>/g)].map((m) => `<a href="#${m[1]}">${m[2].replace(/<[^>]+>/g, '')}</a>`).join('');
+  const optLabel = s.optionalFor && s.optionalFor !== 'không bỏ' && s.optionalFor !== 'mọi dự án đều qua'
+    ? `<span class="chip neutral">bỏ được: ${esc(s.optionalFor)}</span>` : '';
   const body = `
-<section class="step-hero">
+<section class="step-hero" style="grid-template-columns:1fr;padding-bottom:16px">
   <div>
     <div class="crumbs"><a href="/">KryFlow</a> / <a href="/buoc/">các bước</a> / ${esc(s.order)}</div>
-    <h1>${esc(s.order)} · ${esc(s.name)} <span class="en">${esc(s.en)} · gốc ${esc(s.mapsTo)}</span></h1>
-    <p class="job">${esc(s.job)}</p>
-    <div class="badges"><span class="chip ${s.door}">${doorChip(s.door)}</span>${s.challenger ? `<span class="chip gold">có phản biện</span>` : ''}${s.optionalFor ? `<span class="chip neutral">bỏ được: ${esc(s.optionalFor)}</span>` : '<span class="chip neutral">mọi dự án đều qua</span>'}</div>
-  </div>
-  <div class="gates">
-    <div class="gate in"><b>Vào khi</b><span>${esc(s.gateIn)}</span></div>
-    <div class="gate out"><b>Xong khi</b><span>${esc(s.gateOut)}</span></div>
-    <div class="gate stop"><b>Chưa sang bước kế nếu</b><span>${esc(s.stop)}</span></div>
+    <h1>${esc(s.order)} · ${esc(s.name)} <span class="en">${esc(s.en)}</span></h1>
+    <p class="job">${esc(s.viec || s.job)}</p>
+    <div class="badges"><span class="chip ${s.door}">${doorChip(s.door)}</span>${s.challenger ? `<span class="chip gold">có phản biện</span>` : ''}${optLabel}</div>
   </div>
 </section>
-<div class="step-body">
-  <article class="step-main prose">${html}</article>
-  <aside class="step-aside">
-    <div class="toc"><b>Trong trang</b>${toc}</div>
-    <div class="next-prev">
-      ${prev ? `<a class="prev" href="/buoc/${prev.slug}/"><small>← trước</small><b>${esc(prev.name)}</b></a>` : `<a class="prev disabled"><small>← trước</small><b>Bắt đầu</b></a>`}
-      ${next ? `<a class="next" href="/buoc/${next.slug}/"><small>kế →</small><b>${esc(next.name)}</b></a>` : `<a class="next" href="/ho-so/"><small>kế →</small><b>Hồ sơ dự án</b></a>`}
+<div class="step-lite">
+  <div class="step-facts">
+    <div class="fact"><b>Ai cần bước này</b><span>${esc(s.aiCan || '')}</span></div>
+    <div class="fact ok"><b>Xong khi</b><span>${esc(s.xong || s.gateOut)}</span></div>
+    ${s.challenger ? `<div class="fact warn"><b>Có người phản biện</b><span>${esc(s.challenger)}</span></div>` : ''}
+  </div>
+
+  <div class="ex">
+    <div class="ex-head">Ví dụ nhanh</div>
+    <div class="ex-body">
+      <div class="ex-row u"><span class="who">Bạn</span><p>${esc(s.exU || '')}</p></div>
+      <div class="ex-row a"><span class="who">AI</span><p>${esc(s.exA || '')}</p></div>
     </div>
-    <a class="btn ghost sm" href="${meta.repo}/blob/main/${s.file}">Xem file gốc trên GitHub</a>
-  </aside>
+  </div>
+
+  <div class="callout gold get-full">
+    <div>
+      <b>Muốn làm thật?</b> Prompt đầy đủ và hướng dẫn chi tiết của bước này nằm trong repo. Bạn tải cả bộ về rồi copy prompt ra dùng.
+    </div>
+    <div class="btn-row">
+      <a class="btn primary sm" href="${esc(s.github || (meta.repo + '/blob/main/' + s.file))}">Lấy prompt bước này</a>
+      <a class="btn sm" href="${meta.repo}">Tải cả bộ KryFlow</a>
+    </div>
+  </div>
+
+  <div class="next-prev">
+    ${prev ? `<a class="prev" href="/buoc/${prev.slug}/"><small>← bước trước</small><b>${esc(prev.name)}</b></a>` : `<a class="prev" href="/bat-dau/"><small>←</small><b>Cách bắt đầu</b></a>`}
+    ${next ? `<a class="next" href="/buoc/${next.slug}/"><small>bước kế →</small><b>${esc(next.name)}</b></a>` : `<a class="next" href="/chay-thu/"><small>xem →</small><b>Một dự án chạy thử</b></a>`}
+  </div>
 </div>`;
-  return layout({ title: `${s.order} · ${s.name}`, desc: s.job, path: `/buoc/${s.slug}/`, body });
+  return layout({ title: `${s.order} · ${s.name}`, desc: s.viec || s.job, path: `/buoc/${s.slug}/`, body });
 }
 
 function pageMd(file, { title, desc, path, wide = false, extraTop = '', extraBottom = '', data = {} }) {
@@ -291,7 +302,7 @@ const checklistHtml = `
   <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><h3>Dự án của bạn đang ở bước nào?</h3><span class="chip neutral" data-progress-label>0/${steps.length} bước</span><button class="btn ghost sm" data-checklist-reset style="margin-left:auto">Xoá tiến độ</button></div>
   <div class="progress"><i data-progress></i></div>
   <p class="muted small">Tick khi qua cửa ra của bước. Lưu trên trình duyệt này, không gửi đi đâu. Dùng để nhớ mình đang ở đâu khi mở chat mới.</p>
-  <div class="check" data-checklist>${steps.map((s) => `<label><input type="checkbox" data-id="${s.slug}"><span class="t"><b>${esc(s.order)} · ${esc(s.name)}</b><small>xong khi: ${esc(s.gateOut)}</small></span><a class="btn ghost sm" href="/buoc/${s.slug}/">mở</a></label>`).join('')}</div>
+  <div class="check" data-checklist>${steps.map((s) => `<label><input type="checkbox" data-id="${s.slug}"><span class="t"><b>${esc(s.order)} · ${esc(s.name)}</b><small>xong khi: ${esc(s.xong || s.gateOut)}</small></span><a class="btn ghost sm" href="/buoc/${s.slug}/">mở</a></label>`).join('')}</div>
 </section>`;
 out('/bat-dau/', pageMd('site/content/bat-dau.md', { title: 'Bắt đầu', desc: 'Cài KryFlow lên ChatGPT Plus hoặc Gemini trong 10 phút.', path: '/bat-dau/' }));
 out('/ho-so/', pageMd('site/content/ho-so.md', { title: 'Hồ sơ dự án', desc: 'Mẫu hồ sơ dự án: bộ nhớ dán vào mỗi chat mới, và checklist bạn đang ở bước nào.', path: '/ho-so/', extraTop: checklistHtml }));
